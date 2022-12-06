@@ -103,8 +103,8 @@ class _DayWorkoutWidgetState extends State<DayWorkoutWidget> {
           ),
         ),
         Positioned(
-          right: 10,
-          bottom: 10,
+          right: 14,
+          bottom: 20,
           child: IconButton(
             padding: EdgeInsets.all(Dimensions.cardMediumSpacing),
             icon: const Icon(Icons.arrow_downward),
@@ -113,7 +113,7 @@ class _DayWorkoutWidgetState extends State<DayWorkoutWidget> {
           ),
         ),
         Positioned(
-            bottom: Dimensions.cardMediumSpacing,
+            bottom: Dimensions.cardMediumSpacing + 10,
             child: SizedBox(
               width: MediaQuery.of(context).size.width * 0.6,
               child: ValueListenableBuilder(

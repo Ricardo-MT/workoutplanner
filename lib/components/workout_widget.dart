@@ -92,25 +92,28 @@ class _WorkoutWidgetState extends State<WorkoutWidget> {
         ),
         Align(
           alignment: Alignment.bottomLeft,
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.end,
-            children: [
-              Text(
-                'Sets ${widget.workout.sets}',
-                style: Theme.of(context).textTheme.bodyText1?.copyWith(
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
-                    ),
-              ),
-              Text(
-                'x ${widget.workout.reps}',
-                style: Theme.of(context).textTheme.bodyText1?.copyWith(
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
-                    ),
-              ),
-            ],
+          child: Padding(
+            padding: EdgeInsets.all(Dimensions.cardMediumSpacing),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                Text(
+                  'Sets ${widget.workout.sets}',
+                  style: Theme.of(context).textTheme.bodyText1?.copyWith(
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                      ),
+                ),
+                Text(
+                  'x ${widget.workout.reps}',
+                  style: Theme.of(context).textTheme.bodyText1?.copyWith(
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                      ),
+                ),
+              ],
+            ),
           ),
         )
       ],
