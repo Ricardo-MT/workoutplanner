@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:workoutplanner/components/day_workout_widget.dart';
 import 'package:workoutplanner/models/daily_workout_model.dart';
@@ -40,6 +38,7 @@ class _WeekWorkoutWidgetState extends State<WeekWorkoutWidget> {
 }
 
 int getWeekdayIniitialIndex() {
-  final date = DateTime.now();
-  return min(date.weekday - 1, 4);
+  // final date = DateTime.now();
+  // return min(date.weekday - 1, 4);
+  return 3;
 }

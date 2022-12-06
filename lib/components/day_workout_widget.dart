@@ -35,6 +35,16 @@ class _DayWorkoutWidgetState extends State<DayWorkoutWidget> {
     }
   }
 
+  animateTo(int value) {
+    if (controller.hasClients) {
+      controller.animateToPage(
+        value,
+        duration: const Duration(milliseconds: 300),
+        curve: Curves.fastOutSlowIn,
+      );
+    }
+  }
+
   @override
   void dispose() {
     super.dispose();
@@ -100,6 +110,7 @@ class _DayWorkoutWidgetState extends State<DayWorkoutWidget> {
                   return AnimatedProgress(
                     count: widget.dailyWorkout.workouts.length,
                     current: value,
+                    onPress: animateTo,
                   );
                 },
               ),
@@ -114,9 +125,11 @@ class AnimatedProgress extends StatelessWidget {
     Key? key,
     required this.count,
     required this.current,
+    required this.onPress,
   }) : super(key: key);
   final int count;
   final int current;
+  final Function(int index) onPress;
 
   @override
   Widget build(BuildContext context) {
@@ -124,13 +137,21 @@ class AnimatedProgress extends StatelessWidget {
       children: List.generate(
         count,
         (index) => Expanded(
-          child: AnimatedContainer(
-            margin: const EdgeInsets.symmetric(horizontal: 1),
-            duration: _duration,
-            height: 6,
-            decoration: BoxDecoration(
-                color: index <= current ? myColor : Colors.grey,
-                borderRadius: const BorderRadius.all(Radius.circular(4))),
+          child: GestureDetector(
+            onTap: () {
+              onPress(index);
+            },
+            child: Padding(
+              padding: const EdgeInsets.symmetric(vertical: 4),
+              child: AnimatedContainer(
+                margin: const EdgeInsets.symmetric(horizontal: 1),
+                duration: _duration,
+                height: 6,
+                decoration: BoxDecoration(
+                    color: index <= current ? myColor : Colors.grey,
+                    borderRadius: const BorderRadius.all(Radius.circular(4))),
+              ),
+            ),
           ),
         ),
       ),
