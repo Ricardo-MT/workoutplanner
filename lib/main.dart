@@ -13,7 +13,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Workout planner',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        backgroundColor: const Color(0xFFFEFEFE),
+        scaffoldBackgroundColor: const Color(0xFFFEFEFE),
       ),
       home: const MyHomePage(),
     );
@@ -31,8 +32,10 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: WeekWorkoutWidget(
-        workouts: weekWorkouts,
+      body: SafeArea(
+        child: WeekWorkoutWidget(
+          workouts: weekWorkouts,
+        ),
       ),
     );
   }
