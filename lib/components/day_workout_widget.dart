@@ -74,19 +74,31 @@ class _DayWorkoutWidgetState extends State<DayWorkoutWidget> {
         ),
         Padding(
           padding: EdgeInsets.all(Dimensions.cardMediumSpacing),
-          child: GlassmorphedContainer(
-            child: SizedBox(
-              height:
-                  Dimensions.pageUpperGap - Dimensions.cardMediumSpacing * 2,
-              child: Text(
-                widget.dailyWorkout.day,
-                style: Theme.of(context).textTheme.headline4?.copyWith(
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold,
-                    fontSize: Dimensions.pageUpperGap -
-                        Dimensions.cardMediumSpacing * 2 -
-                        6),
-              ),
+          child: SizedBox(
+            height: Dimensions.pageUpperGap * 1.5 -
+                Dimensions.cardMediumSpacing * 2,
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(
+                  widget.dailyWorkout.day,
+                  style: Theme.of(context).textTheme.headline4?.copyWith(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                      fontSize: Dimensions.pageUpperGap -
+                          Dimensions.cardMediumSpacing * 2 -
+                          6),
+                ),
+                Text(
+                  widget.dailyWorkout.category,
+                  style: Theme.of(context).textTheme.headline4?.copyWith(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                      fontSize: Dimensions.pageUpperGap -
+                          Dimensions.cardMediumSpacing * 2 -
+                          12),
+                ),
+              ],
             ),
           ),
         ),

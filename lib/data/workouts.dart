@@ -139,25 +139,25 @@ final wednesdayWorks = [
 final thursdayWorks = [
   WorkoutModel(
     name: 'Deadlift',
-    path: "assets/1_Bench_Press.jpg",
+    path: "assets/22_Deadlift.jpg",
     sets: "3",
     reps: "5",
   ),
   WorkoutModel(
     name: 'Goblet Squat',
-    path: "assets/2_Dumbell_OHP.jpg",
+    path: "assets/23_Goblet_Squat.png",
     sets: "5",
     reps: "6-10",
   ),
   WorkoutModel(
     name: 'Leg Curl',
-    path: "assets/3_Pull_Ups.jpg",
+    path: "assets/24_Leg_Curl.png",
     sets: "2",
     reps: "10-15",
   ),
   WorkoutModel(
     name: 'Leg Extension',
-    path: "assets/4_Barbell_Shrugs.jpg",
+    path: "assets/25_Leg_Extension.jpg",
     sets: "3",
     reps: "10-15",
   ),
@@ -169,13 +169,13 @@ final thursdayWorks = [
   ),
   WorkoutModel(
     name: 'Skull Crushers',
-    path: "assets/6_Barbell_Curls.jpg",
+    path: "assets/21_Skullcrushers.jpg",
     sets: "4",
     reps: "8-12",
   ),
   WorkoutModel(
     name: 'Preacher curl',
-    path: "assets/7_Cables_Tricep_Extension.jpg",
+    path: "assets/27_Preacher_curl.jpg",
     sets: "4",
     reps: "12-15",
   ),
@@ -229,22 +229,27 @@ final fridayWorks = [
 final weekWorkouts = [
   DailyWorkoutModel(
     day: "Monday (cardio)",
+    category: 'Upper 1, heavy',
     workouts: mondayWorks,
   ),
   DailyWorkoutModel(
     day: "Tuesday",
+    category: 'Lower 1',
     workouts: tuesdayWorks,
   ),
   DailyWorkoutModel(
     day: "Wednesday (cardio)",
+    category: 'Upper 2, light',
     workouts: wednesdayWorks,
   ),
   DailyWorkoutModel(
     day: "Thursday",
+    category: 'Lower 2',
     workouts: thursdayWorks,
   ),
   DailyWorkoutModel(
     day: "Friday (cardio)",
+    category: 'Upper 1, heavy',
     workouts: fridayWorks,
   ),
 ];

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:workoutplanner/components/glassmorphed_container.dart';
 import 'package:workoutplanner/models/workout_model.dart';
 import 'package:workoutplanner/utils/dimensions.dart';
 
@@ -93,27 +92,25 @@ class _WorkoutWidgetState extends State<WorkoutWidget> {
         ),
         Align(
           alignment: Alignment.bottomLeft,
-          child: GlassmorphedContainer(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: [
-                Text(
-                  'Sets ${widget.workout.sets}',
-                  style: Theme.of(context).textTheme.bodyText1?.copyWith(
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold,
-                      ),
-                ),
-                Text(
-                  'x ${widget.workout.reps}',
-                  style: Theme.of(context).textTheme.bodyText1?.copyWith(
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold,
-                      ),
-                ),
-              ],
-            ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              Text(
+                'Sets ${widget.workout.sets}',
+                style: Theme.of(context).textTheme.bodyText1?.copyWith(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                    ),
+              ),
+              Text(
+                'x ${widget.workout.reps}',
+                style: Theme.of(context).textTheme.bodyText1?.copyWith(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                    ),
+              ),
+            ],
           ),
         )
       ],
